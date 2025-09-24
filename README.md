@@ -1,4 +1,17 @@
-# Node.js CI/CD Demo App 🚀
+
+# **TASK 1: Automate Code Deployment Using CI/CD Pipeline (GitHub Actions)** 
+
+#### Problem Statement
+
+**Objective:** Set up a CI/CD pipeline to build and deploy a web app.
+
+**Tools:** GitHub, GitHub Actions, Node.js, Docker
+
+**Deliverables:** GitHub repo with .yml CI/CD workflow
+
+---
+
+## Node.js CI/CD Demo App 🚀
 
 This is a **Node.js + Express.js** demo application deployed via **Docker** and automated **CI/CD pipeline** using **GitHub Actions**, running on **AWS EC2**.
 
@@ -20,7 +33,7 @@ The app shows a **visually appealing page with an image**, and demonstrates a co
 ---
 
 ## 📂 Project Structure
-
+```
 nodejs-demo-app/
 ├── Dockerfile
 ├── server.js
@@ -32,7 +45,7 @@ nodejs-demo-app/
 ├── index.html
 ├── style.css
 └── image.png
-
+```
 
 - `server.js` → Express.js server file
 - `public/` → HTML, CSS, and image assets
@@ -77,26 +90,27 @@ Open browser:
 
 http://localhost:3000
 
-🐳 Docker Setup
+## 🐳 Docker Setup
 
-Build Docker image
-
+**Build Docker image**
+```
 docker build -t nodejs-demo-app:latest .
+```
 
-
-Run container
-
+**Run container**
+```
 docker run -d -p 3000:3000 --name nodejs-demo-app nodejs-demo-app:latest
+```
 
-
-Check logs
-
+**Check logs**
+```
 docker logs nodejs-demo-app
+```
 
-🌐 CI/CD Pipeline (GitHub Actions)
+## 🌐 CI/CD Pipeline (GitHub Actions)
 
 The workflow is defined in .github/workflows/main.yml:
-
+```
 Trigger: push to main branch
 
 Jobs:
@@ -108,20 +122,23 @@ Security Scan: scans image using Trivy
 Push: pushes Docker image to DockerHub
 
 Deploy: SSH into EC2, pulls the latest image, restarts container
+```
 
-GitHub Secrets Required:
+## GitHub Secrets Required:
 
-Secret Name	Description
-DOCKER_USERNAME	DockerHub username
-DOCKER_PASSWORD	DockerHub password / access token
-EC2_HOST	AWS EC2 public IP
-EC2_USER	EC2 username (ubuntu or ec2-user)
-EC2_SSH_KEY	Private key for EC2 SSH access
-🌐 Accessing the App
+|Secret Name|	Description|
+|-----------|------------|
+|**DOCKER_USERNAME**|	DockerHub username|
+|**DOCKER_PASSWORD**|	DockerHub password / access token|
+|**EC2_HOST**|	AWS EC2 public IP|
+|**EC2_USER**|	EC2 username (ubuntu or ec2-user)|
+|**EC2_SSH_KEY**|	Private key for EC2 SSH access|
+
+## 🌐 Accessing the App
 
 Once deployed on EC2, open in browser:
 
-http://<EC2-PUBLIC-IP>:3000
+http://EC2-PUBLIC-IP:3000
 
 You should see the styled page with heading, image, and message confirming deployment via CI/CD.
 
@@ -134,8 +151,8 @@ You should see the styled page with heading, image, and message confirming deplo
 
 ## 📸 Screenshot / Demo
 
-<img width="1896" height="878" alt="Screenshot 2025-09-23 223910" src="https://github.com/user-attachments/assets/8d437458-af64-4e8c-bddd-caa1ce0c0eb7" />
+<img width="806" height="878" alt="Screenshot 2025-09-23 223910" src="https://github.com/user-attachments/assets/8d437458-af64-4e8c-bddd-caa1ce0c0eb7" />
 
-<img width="1873" height="769" alt="Screenshot 2025-09-23 223754" src="https://github.com/user-attachments/assets/5adf1a5e-c4a6-482d-80e1-f5c3f0523876" />
+<img width="806" height="878" alt="Screenshot 2025-09-23 223754" src="https://github.com/user-attachments/assets/5adf1a5e-c4a6-482d-80e1-f5c3f0523876" />
 
 
