@@ -18,6 +18,9 @@ The app shows a **visually appealing page with an image**, and demonstrates a co
 - **GitHub Secrets** – Secure storage for DockerHub & EC2 credentials
 
 ---
+
+## 📂 Project Structure
+
 nodejs-demo-app/
 ├── Dockerfile
 ├── server.js
@@ -135,7 +138,4 @@ You should see the styled page with heading, image, and message confirming deplo
 
 <img width="1873" height="769" alt="Screenshot 2025-09-23 223754" src="https://github.com/user-attachments/assets/5adf1a5e-c4a6-482d-80e1-f5c3f0523876" />
 
-
-
-## 📂 Project Structure
 
